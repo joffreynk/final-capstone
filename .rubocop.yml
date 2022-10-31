@@ -28,19 +28,6 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
 
-Style/Documentation:
-  Enabled: false
-Style/ClassAndModuleChildren:
-  Enabled: false
-Style/EachForSimpleLoop:
-  Enabled: false
-Style/AndOr:
-  Enabled: false
-Style/DefWithParentheses:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
-
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
@@ -58,6 +45,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
