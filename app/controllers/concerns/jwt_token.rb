@@ -1,7 +1,8 @@
-require "jwt"
+# frozen_string_literal: true
+
+require 'jwt'
 
 module JwtToken
-
   extend ActiveSupport::Concern
   SECRET_KEY = Rails.application.secrets.secret_key_base.to_s
 
