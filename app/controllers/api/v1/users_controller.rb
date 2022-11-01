@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [:create]
-  before_action :find_user, only: [:index, :show, :update, :destroy]
+  before_action :find_user, only: [:show, :update, :destroy]
 
   def index
     @users = User.all
@@ -8,7 +8,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    render json: @user, status: 200
+    if @user
+      render json: @user, status: 200
+    else
+      render json: {'error': "user is not logged in or doesn't exist"}, status: 404
+    end
   end
 
   def create
@@ -38,7 +42,9 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find(params[:id])
+    if params[:id].to_i === @current_user.id
+      @user = User.find(params[:id])
+    end
   end
   
 end
