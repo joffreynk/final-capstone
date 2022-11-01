@@ -16,14 +16,27 @@ module Api
         end
       end
 
-      def show; end
+      def show
+        render json: find_vehicle, status: 200
+      end
 
-      def destroy; end
+      def destroy
+        @vehicle = find_vehicle
+        if @vehicle.destroy
+          render json: {data: "vehicle deleted successfully"}, status: 200
+        else
+          render json: { errors: @user.errors.full_messages }, status: 503
+        end
+      end
 
       private
 
       def vehicle_params
         params.permit(:name, :picture, :description, :price_per_day, :model, :color)
+      end
+
+      def find_vehicle
+        @vehicle = Vehicle.find_by(id: params[:id])
       end
     end
   end
