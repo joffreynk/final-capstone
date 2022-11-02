@@ -16,7 +16,7 @@ module Api
             render json: { errors: @vehicle.errors.full_messages }, status: 503
           end
         else
-          render json: { data: 'ooops, you are not autherized, contact your admin', role: @current_user.role },
+          render json: { data: 'ooops, you are not autherized, contact your admin' },
                  status: 404
         end
       end
@@ -35,7 +35,7 @@ module Api
           end
         else
 
-          render json: { data: 'ooops, you are not autherized, contact your admin', role: @current_user.role },
+          render json: { data: 'ooops, you are not autherized, contact your admin' },
                  status: 404
         end
       end

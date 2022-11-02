@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :vehicles
 
       resources :reservations
+      get '/all_reservations', to: 'reservations#all_reservations'
     end
   end
 

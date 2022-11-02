@@ -1,7 +1,15 @@
 class Api::V1::ReservationsController < ApplicationController
 
   def index
-    render json: Reservation.all, status: 201
+    render json: Reservation.where(user_id: @current_user.id), status: 201
+  end
+
+  def all_reservations
+    if @current_user.role && @current_user.role.downcase == 'admin'
+      render json: Reservation.all, status: 201
+    else
+      render json: {data: "ooops, you are not autherized, contact your admin"}, status: 404
+    end
   end
 
   def create
