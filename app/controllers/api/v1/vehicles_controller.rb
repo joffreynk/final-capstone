@@ -8,7 +8,7 @@ module Api
       end
 
       def create
-        if @current_user.role.downcase == 'admin'
+        if @current_user.role && @current_user.role.downcase == 'admin'
           @vehicle = Vehicle.new({ user_id: @current_user.id, **vehicle_params })
           if @vehicle.save
             render json: @vehicle, status: 200
@@ -16,7 +16,7 @@ module Api
             render json: { errors: @vehicle.errors.full_messages }, status: 503
           end
         else
-          render json: { data: 'ooops, you are not autherized, contact your admin', role: @current_user.role.downcase },
+          render json: { data: 'ooops, you are not autherized, contact your admin', role: @current_user.role },
                  status: 404
         end
       end
@@ -26,7 +26,7 @@ module Api
       end
 
       def destroy
-        if @current_user.role.downcase == 'admin'
+        if @current_user.role && @current_user.role.downcase == 'admin'
           @vehicle = find_vehicle
           if @vehicle&.destroy
             render json: { data: 'vehicle deleted successfully' }, status: 200
@@ -35,7 +35,7 @@ module Api
           end
         else
 
-          render json: { data: 'ooops, you are not autherized, contact yur admin', role: @current_user.role },
+          render json: { data: 'ooops, you are not autherized, contact your admin', role: @current_user.role },
                  status: 404
         end
       end

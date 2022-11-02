@@ -20,20 +20,16 @@ module Api
       end
 
       def create
-        if @current_user.role.downcase == 'admin'
-          @user = User.new(user_params)
-          if @user.save
-            render json: @user, status: 201
-          else
-            render json: { errors: @user.errors.full_messages }, status: 503
-          end
+        @user = User.new(user_params)
+        if @user.save
+          render json: @user, status: 201
         else
-          render json: { data: 'ooops, you are not autherized, contact yur admin' }, status: 404
+          render json: { errors: @user.errors.full_messages }, status: 503
         end
       end
 
       def destroy
-        if @current_user.role.downcase == 'admin'
+        if @current_user.role && @current_user.role.downcase == 'admin'
           @user.destroy
         else
           render json: { data: 'ooops, you are not autherized, contact yur admin' }, status: 404
