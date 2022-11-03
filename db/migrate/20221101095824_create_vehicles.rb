@@ -4,7 +4,7 @@ class CreateVehicles < ActiveRecord::Migration[7.0]
       t.string :name, null: false
       t.string :model, null: false
       t.decimal :price_per_day, null: false
-      t.string :picture, null: false
+      t.string :picture
       t.text :description
       t.string :color
       t.references :user, null: false, foreign_key: true
