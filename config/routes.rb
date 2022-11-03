@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       post '/auth/login', to: 'authentication#login'
 
       resources :vehicles
+
+      resources :reservations
+      get '/all_reservations', to: 'reservations#all_reservations'
     end
   end
 
