@@ -42,7 +42,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def find_reservation
-    Reservation.find(params[:id])
+    reservation  =  Reservation.find(params[:id]) 
   end
 
 end
