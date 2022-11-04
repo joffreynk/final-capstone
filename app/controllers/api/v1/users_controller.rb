@@ -12,14 +12,6 @@ module Api
         render json: @users, status: 200
       end
 
-      def show
-        if @user
-          render json: @user, status: 200
-        else
-          render json: { error: "user is not logged in or doesn't exist" }, status: 404
-        end
-      end
-
       def create
         @user = User.new(user_params)
         if @user.save
