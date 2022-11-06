@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
@@ -24,7 +26,6 @@ RSpec.describe Reservation, type: :model do
       user_id: @user.id,
       vehicle_id: @vehicle.id
     )
-
   end
 
   it 'Reservatiom city should be present' do

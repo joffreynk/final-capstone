@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -6,7 +8,7 @@ RSpec.describe User, type: :model do
       name: 'Joffrey',
       email: 'joffrey@email.com',
       password: '112233',
-      user_name: 'Joffrey1',
+      user_name: 'Joffrey1'
     )
     @user.save!
   end
