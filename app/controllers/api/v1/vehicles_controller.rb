@@ -4,7 +4,7 @@ module Api
   module V1
     class VehiclesController < ApplicationController
       def index
-        render json: Vehicle.order('created_at DESC'), status: 200
+        render json: VehicleSerializer.new(Vehicle.order('created_at DESC')).serializable_hash[:data][:attributes], status: 200
       end
 
       def create
@@ -22,7 +22,7 @@ module Api
       end
 
       def show
-        render json: find_vehicle, status: 200
+        render json: VehicleSerializer.new(find_vehicle).serializable_hash[:data][:attributes] , status: 200
       end
 
       def destroy
