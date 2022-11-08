@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: 'https://vehicle-booking-capstone.herokuapp.com/api/v1/'
+  host: 'https://vehicles-booking-capstone-app.herokuapp.com/api/v1/'
 }
 
 Rails.application.configure do
