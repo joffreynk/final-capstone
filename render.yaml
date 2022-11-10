@@ -5,13 +5,13 @@ databases:
 
 services:
   - type: web
-    name: mysite
+    name: final_capstone
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
+          fromDatabase:
           name: final_capstone_production
           property: connectionString
       - key: RAILS_MASTER_KEY
