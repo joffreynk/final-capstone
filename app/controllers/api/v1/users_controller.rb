@@ -13,15 +13,15 @@ module Api
       end
 
       def create
-        @user = User.new(user_params)
-        if @user.save
+        userCreated = User.new(user_params)
+        if userCreated.save
 
-          token = JwtToken.encode(user_id: @user.id)
+          token = JwtToken.encode(user_id: userCreated.id)
           time = Time.now + 24.hours.to_i
           render json: { token:, exp: time.strftime('%m-%d-%Y %H:%M'),
-                         name: @user.name, user_name: @user.user_name, role: @user.role }, status: 200
+                         name: userCreated.name, user_name: userCreated.user_name, role: userCreated.role }, status: 200
         else
-          render json: { errors: @user.errors.full_messages }, status: 503
+          render json: { errors: userCreated.errors.full_messages }, status: 503
         end
       end
 
