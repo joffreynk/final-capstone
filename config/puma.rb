@@ -36,7 +36,7 @@ workers ENV.fetch("WEB_CONCURRENCY") { 4 }
 # This directive tells Puma to first boot the application and load code
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
-#
+
 preload_app!
 
 # Allow puma to be restarted by `bin/rails restart` command.
