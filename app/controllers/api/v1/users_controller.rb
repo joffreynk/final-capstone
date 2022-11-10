@@ -18,8 +18,7 @@ module Api
 
           token = JwtToken.encode(user_id: userCreated.id)
           time = Time.now + 24.hours.to_i
-          render json: { token:, exp: time.strftime('%m-%d-%Y %H:%M'),
-                         name: userCreated.name, user_name: userCreated.user_name, role: userCreated.role }, status: 200
+          render json: userCreated, status: 200
         else
           render json: { errors: userCreated.errors.full_messages }, status: 503
         end
