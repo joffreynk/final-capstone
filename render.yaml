@@ -1,7 +1,7 @@
 databases:
   - name: final_capstone
     databaseName: final_capstone
-    user: final_capstone
+    user: joffrey
 
 services:
   - type: web
