@@ -1,5 +1,5 @@
 databases:
-  - name: final_capstone
+  - name: final_capstone_production
     databaseName: final_capstone_production
     user: final_capstone
 
