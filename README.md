@@ -35,7 +35,26 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
     1. rails server
-    2. xdg-open http://localhost:3000/api/v1
+
+
+The main link is http://localhost:3000/api/v1, then you need to add controller to the main link
+
+eg: creating a user:
+http://localhost:3000/api/v1/users and method is post with the data info
+
+{
+"name": "Joffrey",
+"user_name":"Joffrey1",
+"password":"123456",
+"email": "joyjoffrey@gmail.com"
+}
+
+in case a user to add is admin, add: ```role="admin"``` in that object
+
+:warning: don't add public field for making user admin because only admin is allowed to manage the application
+
+
+
     
 
 ### Done!

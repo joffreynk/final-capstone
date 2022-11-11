@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+ 
   namespace :api do
     namespace :v1 do
-      resources :users
+      resources :users, only: [:index, :create, :show, :destroy]
       post '/auth/login', to: 'authentication#login'
 
-      resources :vehicles
+      resources :vehicles, only: [:index, :create, :show, :destroy]
 
-      resources :reservations
+      resources :reservations, only: [:index, :create, :show, :destroy]
       get '/all_reservations', to: 'reservations#all_reservations'
     end
   end
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
