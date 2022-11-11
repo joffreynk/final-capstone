@@ -29,7 +29,7 @@ module Api
         if @current_user.role && @current_user.role.downcase == 'admin'
           find_user.destroy
         else
-          render json: { data: 'ooops, you are not autherized, contact yur admin' }, status: 404
+          render json: { data: 'ooops, you are not autherized, contact your admin' }, status: 404
         end
       end
 
