@@ -45,7 +45,7 @@ module Api
       private
 
       def vehicle_params
-        params.permit(:name, :picture, :description, :price_per_day, :model, :color)
+        params.permit(:name, :picture, :description, :pict, :price_per_day, :model, :color)
       end
 
       def find_vehicle

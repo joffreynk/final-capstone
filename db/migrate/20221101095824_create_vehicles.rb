@@ -3,6 +3,7 @@ class CreateVehicles < ActiveRecord::Migration[7.0]
     create_table :vehicles do |t|
       t.string :name, null: false
       t.string :model, null: false
+      t.string :pict
       t.decimal :price_per_day, null: false
       t.text :description
       t.string :color
