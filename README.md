@@ -38,7 +38,11 @@ To get a local copy up and running follow these simple example steps.
     
 [Booking car API Documentation](https://github.com/JoffreyNK/final-capstone/files/9995233/Booking.car.API.Documentation.pdf)
 
+[The frontend of the appp is found here](https://github.com/desorgui/final-capstone-front-end)
+
 if you are running spec tests, go in directory root of the project and run ```rspec```
+
+
 
 ### Done!
 
