@@ -1,8 +1,12 @@
 require "active_support/core_ext/integer/time"
 
-Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+Rails.application.routes.default_url_options = {
+  host: 'https://localhost:3000/api/v1/'
+}
 
+Rails.application.configure do
+  
+  # Settings specified here will take precedence over those in config/application.rb.
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -62,4 +66,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
 end
