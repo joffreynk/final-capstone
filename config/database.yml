@@ -24,20 +24,23 @@ default: &default
 development:
   <<: *default
   database: final_capstone_development
+  host: localhost
+  username: postgres
+  password: jesulamo@1995
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  username: joffrey
+  # username: joffrey
 
   # The password associated with the postgres role (username).
-  password: Joffrey579*
+  # password: Joffrey579*
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
+  # host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -58,6 +61,9 @@ development:
 test:
   <<: *default
   database: final_capstone_test
+  host: localhost
+  username: postgres
+  password: jesulamo@1995
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
