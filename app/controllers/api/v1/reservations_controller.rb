@@ -16,12 +16,12 @@ module Api
       end
 
       def create
-        @reservation = Reservation.new({ user_id: @current_user.id, **reservation_params })
+        reservation = Reservation.new({ user_id: @current_user.id, **reservation_params })
 
-        if @reservation.save
-          render json: @reservation, status: 201
+        if reservation.save
+          render json: reservation, status: 201
         else
-          render json: @reservation.errors, status: 503
+          render json: reservation.errors, status: 503
         end
       end
 
@@ -30,7 +30,7 @@ module Api
       end
 
       def destroy
-        if @current_user.id == find_reservation.user_id
+        if @current_user.id == find_reservation.user_id || (@current_user.role && @current_user.role == 'admin')
           find_reservation.destroy
           render json: { data: 'record deleted successfully' }, status: 201
         else

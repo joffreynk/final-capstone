@@ -69,8 +69,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_203653) do
   create_table "vehicles", force: :cascade do |t|
     t.string "name", null: false
     t.string "model", null: false
+    t.string "pict"
     t.decimal "price_per_day", null: false
-    t.string "picture"
     t.text "description"
     t.string "color"
     t.bigint "user_id", null: false
