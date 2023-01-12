@@ -26,7 +26,7 @@ development:
   database: final_capstone_development
   host: localhost
   username: postgres
-  password: jesulamo@1995
+  password: Joffrey579*
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -63,7 +63,7 @@ test:
   database: final_capstone_test
   host: localhost
   username: postgres
-  password: jesulamo@1995
+  password: Joffrey579*
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -87,7 +87,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["FINAL_CAPSTONE_DATABASE_URL"] %>
-  database: final_capstone_production
-  username: final_capstone
-  password: <%= ENV["FINAL_CAPSTONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["postgres://final_capstone_api_user:Az0C5mNq8Ui7GKs6bYWiu2moYN9cqFi2@dpg-cevqrpirrk0eqcvnenu0-a/final_capstone_api"] %>
+  database: final_capstone_api
+  username: final_capstone_api_user
+  password: <%= ENV["Az0C5mNq8Ui7GKs6bYWiu2moYN9cqFi2"] %>

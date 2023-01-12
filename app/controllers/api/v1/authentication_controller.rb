@@ -12,6 +12,7 @@ module Api
         if user&.authenticate(params[:password])
           token = JwtToken.encode(user_id: user.id)
           time = Time.now + 24.hours.to_i
+          puts 'User ' + user.name + ' has been signed'
           render json: { token:, exp: time.strftime('%m-%d-%Y %H:%M'),
                          name: user.name, user_name: user.user_name, role: user.role }, status: :ok
         else
