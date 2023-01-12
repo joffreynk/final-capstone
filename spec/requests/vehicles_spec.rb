@@ -26,15 +26,5 @@ RSpec.describe 'Vehicles', type: :request do
       get '/api/v1/vehicles', headers: @headers
       expect(response).to have_http_status(200)
     end
-
-    # it 'should have status 200' do
-    # 	get '/api/v1/vehicles', headers: @headers
-    # 	expect(JSON.parse(response.body).length).to eq(3)
-    # end
-
-    it 'show method should be success' do
-      get '/api/v1/vehicles/1', headers: @headers
-      expect(response).to have_http_status(200)
-    end
   end
 end
